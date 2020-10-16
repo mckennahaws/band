@@ -1,0 +1,132 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+
+/*----------- HEADER --------------*/
+header {
+    padding: .5rem 2%;
+    background-color: rgb(126, 97, 97);
+    color: white;
+}
+header h1 {margin: 0;}
+header h2 {margin: 0; font-weight: normal;}
+
+/*----------- NAVIGATION --------------*/
+nav {
+    background-color: rgb(121, 63, 63);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    float: left;
+    width: 25%;
+}
+nav ul li a {
+    display: block;
+    background-color: rgb(110, 41, 41);
+    color: #eee;
+    border-left: 1px solid rgb(110, 79, 79);
+    padding: .5rem 0;
+    text-decoration: none;
+    font-size: .9rem;
+    text-align: center;
+}
+nav ul li:first-child a {border-left: none;}
+
+nav ul li a:hover {
+    background-color: rgb(131, 30, 30);
+    color: white;
+}
+nav ul li.active a {
+    background-color: rgb(85, 36, 36);
+    color: #fff;
+}
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+    min-height: 10rem;
+}
+main div.bandmembers{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 98%;
+}
+main div.matt, div.brad, div.daniel, div.jared{
+    width: 100%;
+    padding: 2%
+}
+figure.bradimage img{
+    float: left;
+    shape-outside: ellipse(130px 140px at 10% 20%);
+    clip-path: ellipse(130px 140px at 10% 20%);
+}
+figure.jaredimage img{
+    float: left;
+    shape-outside: polygon(0 0, 100% 0, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    margin: .5rem;
+}
+figure.mattimage img{
+    float: right;
+    shape-outside: circle(40%);
+    clip-path: circle(40%);
+    margin: .5rem;
+}
+figure.danielimage img{
+    float:right;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    margin: .5rem;
+}
+main section.thegallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 905px;
+}
+section.thegallery figure{
+    width: 100%;
+    height: 0;
+    padding-bottom: 68%;
+    margin: 0;
+    /* ☝️ image height / width * 100% */
+    position: relative;
+   
+  }
+  section.thegallery figure img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+/*----------- FOOTER --------------*/
+footer {
+    background-color: rgb(121, 63, 63);
+    padding: .5rem 2%;
+    text-align: center;
+    color: white;
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
